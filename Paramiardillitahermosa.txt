@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            background-color: #ffebf0;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #d63384;
+        }
+        .container {
+            margin-top: 15%;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .heart {
+            color: red;
+            font-size: 2em;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .no {
+            background-color: #ccc;
+            color: black;
+        }
+        .yes:hover {
+            background-color: #e63950;
+        }
+        .no:hover {
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín? <span class="heart">❤</span></h1>
+        <div class="button-container">
+            <button class="yes" onclick="alert('¡Sabía que dirías que sí! 💖')">Sí</button>
+            <button class="no" onclick="alert('Oh... 💔 Pero siempre serás especial para mí.')">No</button>
+        </div>
+    </div>
+</body>
+</html>
