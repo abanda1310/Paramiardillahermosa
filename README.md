@@ -1,81 +1,69 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Serás mi San Valentín?</title>
+    <title>¿Quieres ser mi San Valentín?</title>
     <style>
         body {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
             text-align: center;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            overflow: hidden;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-top: 50px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .heart {
-            font-size: 4rem;
-            animation: bounce 1s infinite;
-        }
-        .message {
-            font-size: 1.5rem;
-            margin: 20px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
+            background-color: #ffe6e6;
+            color: #d63384;
+            padding: 50px;
         }
         .container {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .heart {
+            font-size: 50px;
+        }
+        .buttons {
+            margin-top: 20px;
         }
         button {
-            background: #ff4b5c;
+            background-color: #ff4d6d;
             color: white;
-            font-size: 1.5rem;
-            padding: 10px 20px;
             border: none;
-            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
+            margin: 10px;
         }
         button:hover {
-            background: #ff1e42;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            background-color: #e6004c;
         }
     </style>
 </head>
 <body>
-    <h1>💖 ¿Serás mi San Valentín? 💖</h1>
-    <div class="heart">❤️</div>
-    <p class="message" style="animation-delay: 1s;">Eres la razón por la que mi corazón late más fuerte.</p>
-    <p class="message" style="animation-delay: 2s;">Cada día a tu lado es un regalo maravilloso.</p>
-    <p class="message" style="animation-delay: 3s;">No imagino este día sin ti. 💕</p>
+
     <div class="container">
-        <button onclick="respuesta(true)">¡Sí, quiero! 💘</button>
-        <button onclick="respuesta(false)">Lo pensaré... 🤔</button>
+        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+        <p>Mi desde que llegaste a mi, le devolviste la alegria a mi vida y ahora todo es hermoso a tu lado </p>
+        <div class="heart">💖💞💖</div>
+        <div class="buttons">
+            <button onclick="respuesta('Sí')">Sí, ¡acepto! 💕</button>
+            <button onclick="respuesta('No')">No, pero sigues siendo increíble 😊</button>
+        </div>
     </div>
+
     <script>
-        function respuesta(acepta) {
-            if (acepta) {
-                alert("¡Me haces la persona más feliz del mundo! 💞");
+        function respuesta(res) {
+            if (res === 'Sí') {
+                alert('¡Yay! No sabes cuánto me haces feliz 💖');
             } else {
-                alert("Aún así, seguirás siendo mi persona especial. 💖");
+                alert('Bueno... seguiré intentándolo 💔');
             }
         }
-        document.querySelectorAll('.message').forEach((el, i) => {
-            setTimeout(() => { el.style.opacity = '1'; }, i * 1000);
-        });
     </script>
+
 </body>
 </html>
