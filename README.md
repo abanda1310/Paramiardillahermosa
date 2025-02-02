@@ -6,64 +6,96 @@
     <title>¿Quieres ser mi San Valentín?</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #000000, #1a1a2e);
+            color: #ffd700;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #ffe6e6;
-            color: #d63384;
-            padding: 50px;
+            overflow: hidden;
         }
         .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         h1 {
-            font-size: 2em;
+            font-size: 3em;
+            margin-bottom: 1em;
         }
-        .heart {
-            font-size: 50px;
+        p {
+            font-size: 1.5em;
+            margin: 0 20px;
+            max-width: 700px;
         }
-        .buttons {
+        .flowers {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+        }
+        .flower {
+            animation: float 3s ease-in-out infinite;
+        }
+        .flower:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .flower:nth-child(3) {
+            animation-delay: 2s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .button-container {
             margin-top: 20px;
         }
         button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
             background-color: #ff4d6d;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
         }
-        button:hover {
-            background-color: #e6004c;
+        .no {
+            background-color: #ccc;
+            color: black;
+        }
+        .yes:hover {
+            background-color: #e63950;
+        }
+        .no:hover {
+            background-color: #aaa;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
-        <p>Mi corazón late solo por ti. ¿Me harías la persona más feliz del mundo aceptando ser mi San Valentín?</p>
-        <div class="heart">💖💞💖</div>
-        <div class="buttons">
-            <button onclick="respuesta('Sí')">Sí, ¡acepto! 💕</button>
-            <button onclick="respuesta('No')">No, pero sigues siendo increíble 😊</button>
+        <h1>¿Quieres ser mi San Valentín? ❤</h1>
+        <p>Eres lo más hermoso que me ha pasado en la vida. Cada día contigo es un regalo, y no puedo imaginar este San Valentín sin ti a mi lado. 💖</p>
+        <div class="button-container">
+            <button class="yes" onclick="alert('¡Sabía que dirías que sí! 💖')">Sí</button>
+            <button class="no" onclick="alert('Oh... 💔 Pero siempre serás especial para mí.')">No</button>
+        </div>
+        <div class="flowers">
+            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Yellow_flower_icon.svg/1024px-Yellow_flower_icon.svg.png" alt="Flor" width="100">
+            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Yellow_flower_icon.svg/1024px-Yellow_flower_icon.svg.png" alt="Flor" width="120">
+            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Yellow_flower_icon.svg/1024px-Yellow_flower_icon.svg.png" alt="Flor" width="100">
         </div>
     </div>
-
-    <script>
-        function respuesta(res) {
-            if (res === 'Sí') {
-                alert('¡Yay! No sabes cuánto me haces feliz 💖');
-            } else {
-                alert('Bueno... seguiré intentándolo 💔');
-            }
-        }
-    </script>
-
 </body>
 </html>
+
