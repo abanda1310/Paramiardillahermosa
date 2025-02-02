@@ -25,11 +25,13 @@
         h1 {
             font-size: 3em;
             margin-bottom: 1em;
+            animation: fadeIn 3s ease-in;
         }
         p {
             font-size: 1.5em;
             margin: 0 20px;
             max-width: 700px;
+            animation: fadeIn 4s ease-in;
         }
         .flowers {
             position: absolute;
@@ -40,13 +42,14 @@
             width: 100%;
         }
         .flower {
-            animation: float 3s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite, fadeIn 2s ease-in;
+            margin: 0 10px;
         }
         .flower:nth-child(2) {
-            animation-delay: 1s;
+            animation-delay: 1s, 0.5s;
         }
         .flower:nth-child(3) {
-            animation-delay: 2s;
+            animation-delay: 2s, 1s;
         }
         @keyframes float {
             0%, 100% {
@@ -54,6 +57,14 @@
             }
             50% {
                 transform: translateY(-20px);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
         .button-container {
@@ -87,15 +98,14 @@
         <h1>¿Quieres ser mi San Valentín? ❤</h1>
         <p>Eres lo más hermoso que me ha pasado en la vida. Cada día contigo es un regalo, y no puedo imaginar este San Valentín sin ti a mi lado. 💖</p>
         <div class="button-container">
-            <button class="yes" onclick="alert('¡Sabía que dirías que sí! 💖')">Sí</button>
+            <button class="yes" onclick="alert('Encontré una persona que es como mi canción favorita y la verdad que me encantaría escucharla por el resto de mi vida. Esa canción eres tú, mi amor. 💖')">Sí</button>
             <button class="no" onclick="alert('Oh... 💔 Pero siempre serás especial para mí.')">No</button>
         </div>
         <div class="flowers">
-            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Yellow_flower_icon.svg/1024px-Yellow_flower_icon.svg.png" alt="Flor" width="100">
-            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Yellow_flower_icon.svg/1024px-Yellow_flower_icon.svg.png" alt="Flor" width="120">
-            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Yellow_flower_icon.svg/1024px-Yellow_flower_icon.svg.png" alt="Flor" width="100">
+            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Flower_icon_-_yellow.svg/1024px-Flower_icon_-_yellow.svg.png" alt="Flor Amarilla" width="100">
+            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Flower_icon_-_yellow.svg/1024px-Flower_icon_-_yellow.svg.png" alt="Flor Amarilla" width="120">
+            <img class="flower" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Flower_icon_-_yellow.svg/1024px-Flower_icon_-_yellow.svg.png" alt="Flor Amarilla" width="100">
         </div>
     </div>
 </body>
 </html>
-
